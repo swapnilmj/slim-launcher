@@ -95,6 +95,7 @@ class AddAppFragment : BaseFragment(), OnAppClickedListener {
             val prefix = if (profile.equals(myUserHandle)) "" else "\uD83C\uDD46 " //Unicode for boxed w
             val profileSerial = manager.getSerialNumberForUser(profile)
 
+            // Add case insensitive sorting logic in this func
             for (activityInfo in launcher.getActivityList(null, profile)) {
                 val app = App(
                         appName = prefix + activityInfo.label.toString(),
